@@ -6,7 +6,7 @@
 /*   By: emukamada <emukamada@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:11:22 by emukamada         #+#    #+#             */
-/*   Updated: 2024/01/15 23:54:31 by emukamada        ###   ########.fr       */
+/*   Updated: 2024/01/16 00:17:12 by emukamada        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,10 @@ std::string Animal::getType() const
 void Animal::makeSound() const
 {
     std::cout << "*Indistinguishable animal sound*" << std::endl;
+}
+
+Brain *Animal::getBrain() const
+{
+    return brain;
 }
 

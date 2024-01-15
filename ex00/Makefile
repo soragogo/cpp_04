@@ -2,25 +2,35 @@ NAME=a.out
 
 CXX=c++
 
-CXXFLAGS=-Wall -Wextra -Werror
+CXXFLAGS=-Wall -Wextra -Werror  -std=c++98
 
-SRCS = Animal.cpp \
+SRCS= 	main.cpp \
+		Animal.cpp \
 		Cat.cpp \
-		Dog.cpp \
-		main.cpp
+		Dog.cpp
 
-OBJS =$(SRCS:.cpp=.o)
+
+OBJS=$(addprefix objs/, $(SRCS:.cpp=.o))
+
+ifeq ($(MAKECMDGOALS), debug)
+	CXXFLAGS += -g -fsanitize=address
+endif
 
 all:$(NAME)
 
 $(NAME):$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS)
 
-clean:
-	rm -rf $(OBJS)
+objs/%.o: %.cpp
+	@mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-fclean:clean
+clean:
+	rm -rf objs
+
+fclean: clean
 	rm -rf $(NAME)
 
-re:fclean
-	make all
+re: fclean all
+
+debug: re
