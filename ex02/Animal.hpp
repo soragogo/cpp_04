@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 #include "Brain.hpp"
@@ -19,3 +20,5 @@ class Animal{
         Animal(const Animal &animal);
         Animal &operator=(Animal &animal);
 };
+
+#endif
