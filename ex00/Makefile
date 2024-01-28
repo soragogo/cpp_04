@@ -7,7 +7,9 @@ CXXFLAGS=-Wall -Wextra -Werror  -std=c++98
 SRCS= 	main.cpp \
 		Animal.cpp \
 		Cat.cpp \
-		Dog.cpp
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp
 
 
 OBJS=$(addprefix objs/, $(SRCS:.cpp=.o))
