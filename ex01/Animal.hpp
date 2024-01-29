@@ -12,13 +12,9 @@ class Animal{
         Animal &operator=(Animal &animal);
         virtual void makeSound() const;
         std::string getType() const;
-        Brain* getBrain() const;
-
+        virtual std::string* getBrainIdeas() const;
     protected:
         std::string type;
-
-    private:
-        Brain *brain;
 };
 
 #define END             "\033[0m"

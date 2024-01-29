@@ -8,7 +8,9 @@ SRCS= 	main.cpp \
 		Animal.cpp \
 		Cat.cpp \
 		Dog.cpp \
-		Brain.cpp
+		Brain.cpp \
+		WrongCat.cpp \
+		WrongAnimal.cpp
 
 
 OBJS=$(addprefix objs/, $(SRCS:.cpp=.o))

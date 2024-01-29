@@ -12,6 +12,7 @@ class Cat: public Animal{
         Cat(const Animal &cat);
         Cat &operator=(Cat &cat);
         void makeSound() const;
+        std::string* getBrainIdeas() const;
     private:
         Brain *brain;
 };

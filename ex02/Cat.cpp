@@ -6,7 +6,7 @@
 /*   By: emukamada <emukamada@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:11:22 by emukamada         #+#    #+#             */
-/*   Updated: 2024/01/28 19:46:07 by emukamada        ###   ########.fr       */
+/*   Updated: 2024/01/29 11:05:25 by emukamada        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ Cat::~Cat()
 Cat::Cat(const Cat &cat)
 {
     std::cout << "[Cat] " << "Copy constructor called" << std::endl;
-    this->brain = cat.getBrain();
+    this->brain = new Brain();
     this->type = cat.getType();
 }
 
 Cat::Cat(const Animal &cat)
 {
     std::cout << "[Cat] " << "Copy constructor called" << std::endl;
-    this->brain = cat.getBrain();
+    this->brain = new Brain();
     this->type = cat.getType();
 }
 
@@ -44,7 +44,8 @@ Cat &Cat::operator=(Cat &cat)
     std::cout << "[Cat] " << "Copy assignment operator called" << std::endl;
     if (this != &cat)
     {
-        this->brain = cat.getBrain();
+        delete this->brain;
+        this->brain = new Brain;
         this->type = cat.getType();
     }
     return *this;
@@ -57,3 +58,8 @@ void Cat::makeSound() const
     std::cout << "Meow" << std::endl;
 }
 
+
+std::string* Cat::getBrainIdeas() const
+{
+    return brain->getIdeas();
+}

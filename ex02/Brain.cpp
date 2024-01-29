@@ -10,14 +10,25 @@ Brain::~Brain(){
 
 Brain::Brain(const Brain &brain){
     std::cout << "[Brain] " << "Copy constructor called" << std::endl;
-    std::copy(std::begin(brain.ideas), std::end(brain.ideas), std::begin(this->ideas));
+    setIdeas(&(brain.ideas[0]));
 }
 
-Brain &Brain::operator=(Brain &brain){
+Brain &Brain::operator=(const Brain &brain){
     std::cout << "[Brain] " << "Copy assignment operator called" << std::endl;
     if (this != &brain)
     {
-        std::copy(std::begin(brain.ideas), std::end(brain.ideas), std::begin(this->ideas));
+        setIdeas(&(brain.ideas[0]));
     }
     return *this;
 }
+
+std::string* Brain::getIdeas(){
+    return ideas;
+}
+
+void Brain::setIdeas(const std::string* ideas){
+    for (int i = 0; i < 100; i++) {
+        this->ideas[i] = ideas[i];
+    }
+}
+

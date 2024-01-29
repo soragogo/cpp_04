@@ -6,7 +6,7 @@
 /*   By: emukamada <emukamada@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:22:11 by emukamada         #+#    #+#             */
-/*   Updated: 2024/01/16 00:11:18 by emukamada        ###   ########.fr       */
+/*   Updated: 2024/01/29 11:38:35 by emukamada        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,18 @@
 
 int main()
 {
-    Animal *animal[6];
-    animal[0] = new Dog();
-    animal[1] = new Dog(*animal[0]);
-    animal[2] = animal[1];
+    std::cout << GREEN << BOLD << "Test Started 🚀" << END << std::endl;
 
-    animal[3] = new Cat();
-    animal[4] = new Cat(*animal[3]);
-    animal[5] = animal[4];
+    std::cout << BLUE << "Instanciating Cat class 😺" << END << std::endl;
+    Cat cat;
+    std::cout << BLUE << "Instanciating Dog class 🐶" << END << std::endl;
+    Dog dog;
 
-    animal[0]->makeSound();
-    animal[1]->makeSound();
-    animal[2]->makeSound();
-    animal[3]->makeSound();
-    animal[4]->makeSound();
-    animal[5]->makeSound();
-
-    delete animal[0];
-    delete animal[1];
-    delete animal[3];
-    delete animal[4];
+    std::cout << BLUE << "Everything is same as ex01, except that Animal class cannot be instanciated" << END << std::endl;
+    std::cout << BLUE << "Therefore, the code below throws an error" << END << std::endl;
+    std::cout << "-------------------" << std::endl;
+    // Animal animal;
+    std::cout << "-------------------" << std::endl;
 }
 
 void end(void)__attribute__((destructor));

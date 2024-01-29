@@ -9,9 +9,9 @@ class Brain{
         Brain();
         ~Brain();
         Brain(const Brain &brain);
-        Brain &operator=(Brain &brain);
+        Brain &operator=(const Brain &brain);
         std::string* getIdeas(void);
-        void setIdeas(std::string* ideas);
+        void setIdeas(const std::string* ideas);
 
     private:
         std::string ideas[100];

@@ -48,5 +48,11 @@ int main()
     std::cout << BLUE <<  "Deleting Classes ..." << END << std::endl;
     delete wrong_meta;
     delete wrong_cat;
-    system("leaks -q a.out");
 }
+
+// void end(void)__attribute__((destructor));
+
+// void end(void)
+// {
+//     system("leaks -q a.out");
+// }
