@@ -6,7 +6,7 @@
 /*   By: emukamada <emukamada@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:22:11 by emukamada         #+#    #+#             */
-/*   Updated: 2024/01/16 00:18:24 by emukamada        ###   ########.fr       */
+/*   Updated: 2024/01/28 20:05:04 by emukamada        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,52 @@
 
 int main()
 {
+    std::cout << GREEN << BOLD << "Test Started 🚀" << END << std::endl;
+
+    std::cout << BLUE << "[Creating the array of Animal classes]" << END << std::endl;
     Animal *animal[6];
+
+    std::cout << BLUE << "[Testing Dog classes]" << END << std::endl;
+
+    std::cout << BLUE << "Original: " << END << std::endl;
     animal[0] = new Dog();
-    animal[1] = new Dog(*animal[0]);
-    animal[2] = animal[1];
-
-    animal[3] = new Cat();
-    animal[4] = new Cat(*animal[3]);
-    animal[5] = animal[4];
-
+    std::cout << "animal[0]->makeSound(): ";
     animal[0]->makeSound();
+    std::cout << "animal[0]->getBrain()->getIdeas(): " << animal[0]->getBrain()->getIdeas() << std::endl;
+
+    std::cout << BLUE << "Copy Constructor: " << END << std::endl;
+    animal[1] = new Dog(*animal[0]);
+    std::cout << "animal[1]->makeSound(): ";
     animal[1]->makeSound();
+    std::cout << "animal[1]->getBrain()->getIdeas(): " << animal[1]->getBrain()->getIdeas() << std::endl;
+
+    std::cout << BLUE << "Copy Assignment Opeator:: " << END << std::endl;
+    animal[2] = animal[1];
+    std::cout << "animal[2]->makeSound(): ";
     animal[2]->makeSound();
-    animal[3]->makeSound();
-    animal[4]->makeSound();
-    animal[5]->makeSound();
+    std::cout << "animal[2]->getBrain()->getIdeas(): " << animal[2]->getBrain()->getIdeas() << std::endl;
+
+
+    std::cout << BLUE << "[Testing Cat classes]" << END << std::endl;
+    std::cout << BLUE << "Original: " << END << std::endl;
+    animal[3] = new Cat();
+    std::cout << "animal[0]->makeSound(): ";
+    animal[0]->makeSound();
+    std::cout << "animal[0]->getBrain()->getIdeas(): " << animal[0]->getBrain()->getIdeas() << std::endl;
+
+    std::cout << BLUE << "Copy Constructor: " << END << std::endl;
+    animal[4] = new Cat(*animal[0]);
+    std::cout << "animal[1]->makeSound(): ";
+    animal[1]->makeSound();
+    std::cout << "animal[1]->getBrain()->getIdeas(): " << animal[1]->getBrain()->getIdeas() << std::endl;
+
+    std::cout << BLUE << "Copy Assignment Opeator:: " << END << std::endl;
+    animal[5] = animal[1];
+    std::cout << "animal[2]->makeSound(): ";
+    animal[2]->makeSound();
+    std::cout << "animal[2]->getBrain()->getIdeas(): " << animal[2]->getBrain()->getIdeas() << std::endl;
+
+    std::cout << BLUE <<  "Deleting Classes ..." << END << std::endl;
 
     delete animal[0];
     delete animal[1];

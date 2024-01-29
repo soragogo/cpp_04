@@ -6,7 +6,7 @@
 /*   By: emukamada <emukamada@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:11:22 by emukamada         #+#    #+#             */
-/*   Updated: 2024/01/16 00:17:12 by emukamada        ###   ########.fr       */
+/*   Updated: 2024/01/28 20:17:42 by emukamada        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Animal::~Animal()
 Animal::Animal(const Animal &animal)
 {
     std::cout << "[Animal] " << "Copy constructor called" << std::endl;
-    this->type = animal.type;
+    this->type = animal.getType();
 
 }
 
@@ -35,7 +35,7 @@ Animal &Animal::operator=(Animal &animal)
 {
     std::cout << "[Animal] " << "Copy assignment operator called" << std::endl;
     if (this != &animal)
-        this->type = animal.type;
+        this->type = animal.getType();
     return *this;
 }
 

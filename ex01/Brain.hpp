@@ -10,6 +10,8 @@ class Brain{
         ~Brain();
         Brain(const Brain &brain);
         Brain &operator=(Brain &brain);
+        std::string* getIdeas(void);
+        void setIdeas(std::string* ideas);
 
     private:
         std::string ideas[100];

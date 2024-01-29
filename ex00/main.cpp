@@ -29,6 +29,9 @@ int main()
     delete cat;
     delete dog;
     std::cout << std::endl;
+
+
+
     std::cout << GREEN << BOLD << "Now Testing Wrong Class 🚀" << END << std::endl;
     std::cout << BLUE <<  "[WrongAnimal Class Test]" << END << std::endl;
     const WrongAnimal* wrong_meta = new WrongAnimal();
@@ -45,5 +48,5 @@ int main()
     std::cout << BLUE <<  "Deleting Classes ..." << END << std::endl;
     delete wrong_meta;
     delete wrong_cat;
-    // system("leaks -q a.out");
+    system("leaks -q a.out");
 }
