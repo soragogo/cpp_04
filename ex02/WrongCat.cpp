@@ -12,7 +12,7 @@ WrongCat::~WrongCat()
 
 }
 
-WrongCat::WrongCat(const WrongCat &wcat)
+WrongCat::WrongCat(const WrongCat &wcat) :WrongAnimal(wcat)
 {
     std::cout << "[WrongCat] " << "Copy constructor called" << std::endl;
     this->type = wcat.getType();
