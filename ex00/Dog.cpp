@@ -6,7 +6,7 @@
 /*   By: emukamada <emukamada@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:11:22 by emukamada         #+#    #+#             */
-/*   Updated: 2024/01/28 19:30:04 by emukamada        ###   ########.fr       */
+/*   Updated: 2024/01/29 11:51:02 by emukamada        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Dog::~Dog()
 
 }
 
-Dog::Dog(const Dog &dog)
+Dog::Dog(const Dog &dog) :Animal(dog)
 {
     std::cout << "[Dog] " << "Copy constructor called" << std::endl;
     this->type = dog.getType();
