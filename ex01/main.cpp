@@ -6,7 +6,7 @@
 /*   By: emukamada <emukamada@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:22:11 by emukamada         #+#    #+#             */
-/*   Updated: 2024/01/29 11:26:36 by emukamada        ###   ########.fr       */
+/*   Updated: 2024/01/29 11:54:16 by emukamada        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ int main()
     delete animal[5];
 }
 
-void end(void)__attribute__((destructor));
+// void end(void)__attribute__((destructor));
 
-void end(void)
-{
-    system("leaks -q a.out");
-}
+// void end(void)
+// {
+//     system("leaks -q a.out");
+// }
